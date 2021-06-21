@@ -72,9 +72,9 @@
   #define Y_BED_SIZE  400
   #define Z_MAX_POS   400
 #elif BV(JULIA_2018_PRO_DUAL_A) || BV(JULIA_2018_PRO_DUAL_A24)
-  #define X_BED_SIZE  370
-  #define Y_BED_SIZE  400
-  #define Z_MAX_POS   410
+  #define X_BED_SIZE  400//370
+  #define Y_BED_SIZE  400//395
+  #define Z_MAX_POS   410//400
 #endif
 
 /** Min Pos **/
@@ -104,19 +104,18 @@
 #define E1_DRIVER_TYPE    TMC2208//DRV8825
 
 #if BV_PRO() || BV_PRO_ABL() || BV_PRO_ABL24()
-  #define INVERT_X_DIR    false//true//false
-  #define INVERT_Y_DIR    false//true//false
+  #define INVERT_X_DIR    false
+  #define INVERT_Y_DIR    false
   #define INVERT_Z_DIR    true
 
   #define INVERT_E0_DIR   false
   #define INVERT_E1_DIR   true
 #else
-  #define INVERT_X_DIR    true//false
-  #define INVERT_Y_DIR    true//false
-  #define INVERT_Z_DIR    true//false
+  #define INVERT_X_DIR    false
+  #define INVERT_Y_DIR    false
+  #define INVERT_Z_DIR    false
 
-  #define INVERT_E0_DIR   false//true
-  #define INVERT_E1_DIR   false//true
+  #define INVERT_E0_DIR   true
 #endif
 
 /**  Enstops  **/
@@ -130,7 +129,7 @@
 #define Z_HOME_DIR   1
 
 #if BV_REG() || BV(JULIA_2018_RPI_E)
-  #define MANUAL_X_HOME_POS 0
+  #define MANUAL_X_HOME_POS -10
   #define MANUAL_Y_HOME_POS Y_BED_SIZE 
   #define MANUAL_Z_HOME_POS Z_MAX_POS
 #elif BV_PRO_SINGLE()
@@ -150,9 +149,9 @@
 #define S_CURVE_ACCELERATION
 #if BV_PRO_ABL24()
   //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 200,  200, 1007.874, 280 }  for 1/32 microstep ratio
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 100,  100, 503.937, 140 }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 100,  100, 503.937 , 140 }
 #else
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 160,  160, 1007.874, 280 }
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 160,  160, 1007.874, 280 } //was { 160,  160, 1007.874, 280 } for old printers
 #endif
 #if BV_PRO() || BV_PRO_ABL() || BV_PRO_ABL24()
   #define DEFAULT_MAX_FEEDRATE          { 300, 300, 20, 45 }
@@ -201,8 +200,6 @@
 #define TEMP_SENSOR_0       3
 #if BV_PRO_DUAL()
   #define TEMP_SENSOR_1     3
-  #define TEMP_SENSOR_2     3
-  #define TEMP_SENSOR_3     3
 #else
   #define TEMP_SENSOR_1     0
 #endif
