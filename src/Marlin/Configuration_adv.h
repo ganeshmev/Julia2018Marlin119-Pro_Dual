@@ -233,11 +233,11 @@
 
 // Extruder runout prevention.
 // If the machine is idle and the temperature over MINTEMP
-// then extrude some filament every couple#define PINS_DEBUGGING of SECONDS.
+// then extrude some filament every couple of SECONDS.
 //#define EXTRUDER_RUNOUT_PREVENT
 #if ENABLED(EXTRUDER_RUNOUT_PREVENT)
   #define EXTRUDER_RUNOUT_MINTEMP 190
-  #define EXTRUDER_RUNOUT_SECONDS 30//60//30
+  #define EXTRUDER_RUNOUT_SECONDS 30
   #define EXTRUDER_RUNOUT_SPEED 1500  // mm/m
   #define EXTRUDER_RUNOUT_EXTRUDE 5   // mm
 #endif
@@ -652,10 +652,10 @@
    * an option on the LCD screen to continue the print from the last-known
    * point in the file.
    */
-  #define POWER_LOSS_RECOVERY
+  //#define POWER_LOSS_RECOVERY
   #if ENABLED(POWER_LOSS_RECOVERY)
-    #define POWER_LOSS_PIN   2     // Pin to detect power loss
-    #define POWER_LOSS_STATE HIGH   // State of pin indicating power loss
+    //#define POWER_LOSS_PIN   44     // Pin to detect power loss
+    //#define POWER_LOSS_STATE HIGH   // State of pin indicating power loss
   #endif
 
   /**
@@ -1089,41 +1089,6 @@
  */
 #if HAS_DRIVER(TMC26X)
 
-<<<<<<< Updated upstream
-  #define X_MAX_CURRENT     800//1000 // in mA
-  #define X_SENSE_RESISTOR    91 // in mOhms
-  #define X_MICROSTEPS        16 // number of microsteps
-
-  #define X2_MAX_CURRENT    800//1000
-  #define X2_SENSE_RESISTOR   91
-  #define X2_MICROSTEPS       16
-
-  #define Y_MAX_CURRENT     800//1000
-  #define Y_SENSE_RESISTOR    91
-  #define Y_MICROSTEPS        16
-
-  #define Y2_MAX_CURRENT    800//1000
-  #define Y2_SENSE_RESISTOR   91
-  #define Y2_MICROSTEPS       16
-
-  #define Z_MAX_CURRENT     800//1000
-  #define Z_SENSE_RESISTOR    91
-  #define Z_MICROSTEPS        16
-
-  #define Z2_MAX_CURRENT    800//1000
-  #define Z2_SENSE_RESISTOR   91
-  #define Z2_MICROSTEPS       16
-
-  #define E0_MAX_CURRENT    800//1000
-  #define E0_SENSE_RESISTOR   91
-  #define E0_MICROSTEPS       16
-
-  #define E1_MAX_CURRENT    800//1000
-  #define E1_SENSE_RESISTOR   91
-  #define E1_MICROSTEPS       16
-
-  #define E2_MAX_CURRENT    800//1000
-=======
   #define X_MAX_CURRENT     1000 // in mA
   #define X_SENSE_RESISTOR    91 // in mOhms
   #define X_MICROSTEPS        16 // number of microsteps
@@ -1157,7 +1122,6 @@
   #define E1_MICROSTEPS       16
 
   #define E2_MAX_CURRENT    1000
->>>>>>> Stashed changes
   #define E2_SENSE_RESISTOR   91
   #define E2_MICROSTEPS       16
 
