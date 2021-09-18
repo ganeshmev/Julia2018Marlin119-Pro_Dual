@@ -1241,8 +1241,8 @@ static_assert(X_MAX_LENGTH >= X_BED_SIZE && Y_MAX_LENGTH >= Y_BED_SIZE,
     #error "Enable USE_YMAX_PLUG when homing Y to MAX."
   #endif
 #endif
-#if Z_HOME_DIR < 0 && DISABLED(USE_ZMIN_PLUG)
-  #error "Enable USE_ZMIN_PLUG when homing Z to MIN."
+//#if Z_HOME_DIR < 0 && DISABLED(USE_ZMIN_PLUG)
+//  #error "Enable USE_ZMIN_PLUG when homing Z to MIN."
 #elif Z_HOME_DIR > 0 && DISABLED(USE_ZMAX_PLUG)
   #error "Enable USE_ZMAX_PLUG when homing Z to MAX."
 #endif
@@ -1651,4 +1651,4 @@ static_assert(COUNT(sanity_arr_3) <= XYZE_N, "DEFAULT_MAX_ACCELERATION has too m
   #error "POWER_LOSS_RECOVERY currently requires an LCD Controller."
 #endif
 
-#endif // _SANITYCHECK_H_
+//#endif // _SANITYCHECK_H_
