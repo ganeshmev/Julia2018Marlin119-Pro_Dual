@@ -8,7 +8,7 @@
 #define REQUIRED_CONFIGURATION_ADV_H_VERSION 010109
 
 #define PROTOCOL_VERSION "1.0"
-#define MACHINE_NAME "Julia Pro Dual ABL 24V with TMC version for all"
+#define MACHINE_NAME "Julia Pro Dual ABL 24V with TMC version for Z and E0"
 #define DEFAULT_MACHINE_UUID "0108a599-3b95-4186-a636-069eb59879c0"
 
 #define BUILD_UNIX_DATETIME "1618464483"
