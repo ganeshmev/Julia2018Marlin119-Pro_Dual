@@ -72,9 +72,9 @@
   #define Y_BED_SIZE  400
   #define Z_MAX_POS   400
 #elif BV(JULIA_2018_PRO_DUAL_A) || BV(JULIA_2018_PRO_DUAL_A24)
-  #define X_BED_SIZE  250//370
-  #define Y_BED_SIZE  250//395
-  #define Z_MAX_POS   300//400
+  #define X_BED_SIZE  370
+  #define Y_BED_SIZE  395
+  #define Z_MAX_POS   400
 #endif
 
 /** Min Pos **/
@@ -97,25 +97,19 @@
 #define Z_MIN_POS 0
 
 /**  Stepper  **/
-#define X_DRIVER_TYPE     DRV8825
-#define Y_DRIVER_TYPE     DRV8825
+#define X_DRIVER_TYPE     TMC2208//DRV8825
+#define Y_DRIVER_TYPE     TMC2208//DRV8825
 #define Z_DRIVER_TYPE     TMC2208//DRV8825
 #define E0_DRIVER_TYPE    TMC2208//DRV8825
-#define E1_DRIVER_TYPE    DRV8825
+#define E1_DRIVER_TYPE    TMC2208//DRV8825
 
 #if BV_PRO() || BV_PRO_ABL() || BV_PRO_ABL24()
-<<<<<<< HEAD
   #define INVERT_X_DIR    false//true
   #define INVERT_Y_DIR    false//true
-  #define INVERT_Z_DIR    false//true//true
-=======
-  #define INVERT_X_DIR    true
-  #define INVERT_Y_DIR    true
   #define INVERT_Z_DIR    false//true
->>>>>>> parent of 4b83604 (Vyapti client firmware-All TMC)
 
   #define INVERT_E0_DIR   true//false
-  #define INVERT_E1_DIR   true
+  #define INVERT_E1_DIR   false//true
 #else
   #define INVERT_X_DIR    false
   #define INVERT_Y_DIR    false
@@ -123,7 +117,7 @@
 
   #define INVERT_E0_DIR   true
 #endif
-
+ 
 /**  Enstops  **/
 #define USE_XMIN_PLUG
 #define USE_YMAX_PLUG
@@ -132,7 +126,7 @@
 /**  Homing  **/
 #define X_HOME_DIR  -1
 #define Y_HOME_DIR   1
-#define Z_HOME_DIR   -1
+#define Z_HOME_DIR   1
 
 #if BV_REG() || BV(JULIA_2018_RPI_E)
   #define MANUAL_X_HOME_POS -10
