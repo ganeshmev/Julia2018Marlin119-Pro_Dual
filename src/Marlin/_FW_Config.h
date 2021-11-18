@@ -117,7 +117,7 @@
 
   #define INVERT_E0_DIR   true
 #endif
- 
+
 /**  Enstops  **/
 #define USE_XMIN_PLUG
 #define USE_YMAX_PLUG
