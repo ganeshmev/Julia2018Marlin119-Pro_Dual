@@ -72,9 +72,9 @@
   #define Y_BED_SIZE  400
   #define Z_MAX_POS   400
 #elif BV(JULIA_2018_PRO_DUAL_A) || BV(JULIA_2018_PRO_DUAL_A24)
-  #define X_BED_SIZE  370
-  #define Y_BED_SIZE  395
-  #define Z_MAX_POS   400
+  #define X_BED_SIZE  395
+  #define Y_BED_SIZE  400
+  #define Z_MAX_POS   405//420
 #endif
 
 /** Min Pos **/
@@ -104,12 +104,12 @@
 #define E1_DRIVER_TYPE    TMC2208//DRV8825
 
 #if BV_PRO() || BV_PRO_ABL() || BV_PRO_ABL24()
-  #define INVERT_X_DIR    false//true
-  #define INVERT_Y_DIR    false//true
-  #define INVERT_Z_DIR    false//true
+  #define INVERT_X_DIR    true//false//false
+  #define INVERT_Y_DIR    true//false//false
+  #define INVERT_Z_DIR    true//true
 
-  #define INVERT_E0_DIR   true//false
-  #define INVERT_E1_DIR   false//true
+  #define INVERT_E0_DIR   false//false
+  #define INVERT_E1_DIR   true//true
 #else
   #define INVERT_X_DIR    false
   #define INVERT_Y_DIR    false
@@ -129,7 +129,7 @@
 #define Z_HOME_DIR   1
 
 #if BV_REG() || BV(JULIA_2018_RPI_E)
-  #define MANUAL_X_HOME_POS -10
+  #define MANUAL_X_HOME_POS 0
   #define MANUAL_Y_HOME_POS Y_BED_SIZE 
   #define MANUAL_Z_HOME_POS Z_MAX_POS
 #elif BV_PRO_SINGLE()
@@ -151,10 +151,10 @@
   //#define DEFAULT_AXIS_STEPS_PER_UNIT   { 200,  200, 1007.874, 280 }  for 1/32 microstep ratio
   #define DEFAULT_AXIS_STEPS_PER_UNIT   { 100,  100, 503.937, 140 }
 #else
-  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 160,  160, 1007.874, 280 } //was { 160,  160, 1007.874, 280 } for old printers
+  #define DEFAULT_AXIS_STEPS_PER_UNIT   { 160,  160, 1007.874, 280 }
 #endif
 #if BV_PRO() || BV_PRO_ABL() || BV_PRO_ABL24()
-  #define DEFAULT_MAX_FEEDRATE          { 300, 300, 20, 45 }
+  #define DEFAULT_MAX_FEEDRATE          { 200, 200, 16, 45 }
 #else
   #define DEFAULT_MAX_FEEDRATE          { 200, 200, 20, 45 }
 #endif
@@ -162,14 +162,14 @@
   #define DEFAULT_MAX_ACCELERATION      { 600, 600, 50, 10000 }
   #define DEFAULT_ACCELERATION          400    // X, Y, Z and E acceleration for printing moves
 #elif BV_PRO_ABL24()
-  #define DEFAULT_MAX_ACCELERATION      { 1500, 1500, 50, 10000 }
-  #define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
+  #define DEFAULT_MAX_ACCELERATION      { 800, 800, 50, 10000 }
+  #define DEFAULT_ACCELERATION          800//1000    // X, Y, Z and E acceleration for printing moves
 #else
   #define DEFAULT_MAX_ACCELERATION      { 1500, 1500, 50, 10000 }
   #define DEFAULT_ACCELERATION          1000    // X, Y, Z and E acceleration for printing moves
 #endif
 #define DEFAULT_RETRACT_ACCELERATION  2000    // E acceleration for retracts
-#define DEFAULT_TRAVEL_ACCELERATION   1000    // X, Y, Z acceleration for travel (non printing) moves
+#define DEFAULT_TRAVEL_ACCELERATION   600    // X, Y, Z acceleration for travel (non printing) moves
 #define DEFAULT_XJERK                 10.0
 #define DEFAULT_YJERK                 10.0
 #define DEFAULT_ZJERK                 0.4
@@ -200,6 +200,8 @@
 #define TEMP_SENSOR_0       3
 #if BV_PRO_DUAL()
   #define TEMP_SENSOR_1     3
+  //#define TEMP_SENSOR_2     3
+  //#define TEMP_SENSOR_3     3
 #else
   #define TEMP_SENSOR_1     0
 #endif
